@@ -1,19 +1,19 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document, Types, Schema as MongooseSchema } from 'mongoose';
 
-export type QuestionaireResultDocument = QuestionaireResult & Document;
+export type QuestionnaireResultDocument = QuestionnaireResult & Document;
 
 @Schema({ timestamps: true })
-export class QuestionaireResult {
+export class QuestionnaireResult {
   _id: any;
   createdAt: any;
 
   @Prop({
     type: MongooseSchema.Types.ObjectId,
-    ref: 'Questionaire',
+    ref: 'Questionnaire',
     required: true,
   })
-  mission: Types.ObjectId;
+  questionaire: Types.ObjectId;
 
   @Prop({ type: String, required: true })
   assigner: string;
@@ -47,8 +47,8 @@ export class QuestionaireResult {
   }
 }
 
-export const QuestionaireResultSchema = SchemaFactory.createForClass(
-  QuestionaireResult,
+export const QuestionnaireResultSchema = SchemaFactory.createForClass(
+  QuestionnaireResult,
 );
 
-QuestionaireResultSchema.loadClass(QuestionaireResult);
+QuestionnaireResultSchema.loadClass(QuestionnaireResult);

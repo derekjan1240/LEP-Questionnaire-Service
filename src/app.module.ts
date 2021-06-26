@@ -3,7 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { QuestionairesModule } from './questionaires/questionaires.module';
+import { QuestionnairesModule } from './questionnaires/questionnaires.module';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { QuestionairesModule } from './questionaires/questionaires.module';
       }),
       inject: [ConfigService],
     }),
-    QuestionairesModule,
+    QuestionnairesModule,
   ],
   exports: [AppService],
   controllers: [AppController],

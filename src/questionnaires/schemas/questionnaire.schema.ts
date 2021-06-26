@@ -1,10 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type QuestionaireDocument = Questionaire & Document;
+export type QuestionnaireDocument = Questionnaire & Document;
 
 @Schema({ timestamps: true })
-export class Questionaire {
+export class Questionnaire {
   _id: any;
 
   @Prop({ required: true })
@@ -12,6 +12,9 @@ export class Questionaire {
 
   @Prop({ required: false })
   description: string;
+
+  @Prop({ required: true })
+  questions: Object[];
 
   toJson() {
     return {
@@ -22,6 +25,6 @@ export class Questionaire {
   }
 }
 
-export const QuestionaireSchema = SchemaFactory.createForClass(Questionaire);
+export const QuestionnaireSchema = SchemaFactory.createForClass(Questionnaire);
 
-QuestionaireSchema.loadClass(Questionaire);
+QuestionnaireSchema.loadClass(Questionnaire);
