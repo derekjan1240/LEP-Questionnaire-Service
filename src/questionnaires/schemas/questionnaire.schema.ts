@@ -20,7 +20,8 @@ export class Questionnaire {
     return {
       _id: this._id,
       name: this.name,
-      unit: this.description,
+      description: this.description,
+      questions: this.questions,
     };
   }
 }

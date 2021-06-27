@@ -13,7 +13,7 @@ export class QuestionnaireResult {
     ref: 'Questionnaire',
     required: true,
   })
-  questionaire: Types.ObjectId;
+  questionnaire: Types.ObjectId;
 
   @Prop({ type: String, required: true })
   assigner: string;
@@ -25,7 +25,7 @@ export class QuestionnaireResult {
   classroom: string;
 
   @Prop({ type: Object, required: false })
-  answer: any;
+  answers: any;
 
   @Prop({ type: Boolean, required: false, default: false })
   is_complated: boolean;
@@ -36,10 +36,11 @@ export class QuestionnaireResult {
   toJson() {
     return {
       _id: this._id,
+      questionnaire: this.questionnaire,
       assigner: this.assigner,
       assignee: this.assignee,
       classroom: this.classroom,
-      answer: this.answer,
+      answers: this.answers,
       is_complated: this.is_complated,
       complated_date: this.complated_date,
       createdAt: this.createdAt,
