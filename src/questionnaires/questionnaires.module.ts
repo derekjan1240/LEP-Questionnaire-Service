@@ -21,6 +21,7 @@ import {
     ]),
     forwardRef(() => AppModule),
   ],
+  exports: [QuestionnairesService],
   controllers: [QuestionnairesController],
   providers: [QuestionnairesService],
 })
